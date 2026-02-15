@@ -857,7 +857,7 @@ func (al *AgentLoop) handleCommand(ctx context.Context, msg bus.InboundMessage) 
 			if _, exists := al.channelManager.GetChannel(value); !exists && value != "cli" {
 				return fmt.Sprintf("Channel '%s' not found or not enabled", value), true
 			}
-			
+
 			// If message came from CLI, maybe we want to redirect CLI output to this channel?
 			// That would require state persistence about "redirected channel"
 			// For now, just acknowledged.
